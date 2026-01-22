@@ -16,6 +16,11 @@ def exibir_opcoes():
     print('3. Ativar restaurante')
     print('4. Sair\n')
 
+def opcao_invalida():
+    print('Opção inválida!\n')
+    input('Pressione Enter para continuar...')
+    main()
+
 def finalizar_app():
     os.system('cls')
     # os.system('clear') 
@@ -32,10 +37,14 @@ def escolher_opcao():
         print('Listar restaurantes')
     elif opcao_escolhida == 3: 
         print('Ativar restaurante')
-    else: 
+    elif opcao_escolhida == 4: 
         finalizar_app()
+    else: 
+        opcao_invalida()
+        
 
 def main():
+    os.system('cls')
     exibir_nome_do_programa()
     exibir_opcoes()
     escolher_opcao()
